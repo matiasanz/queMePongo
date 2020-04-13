@@ -1,19 +1,19 @@
 
-Como usuarie de QuÈMePongo, quiero:
+Como usuarie de Qu√©MePongo, quiero:
 
-[X] - especificar quÈ tipo de prenda estoy cargando
-	(zapatos, camisa de mangas cortas, pantalÛn, etc).
+[X] - especificar qu√© tipo de prenda estoy cargando
+	(zapatos, camisa de mangas cortas, pantal√≥n, etc).
 
-[X] - identificar a quÈ categorÌa pertenece una prenda
+[X] - identificar a qu√© categor√≠a pertenece una prenda
 	(parte superior, calzado, parte inferior, accesorios).
 
-[ ] - indicar de quÈ tela o material est· hecha una prenda
+[X] - indicar de qu√© tela o material est√° hecha una prenda
 
-[ ] - poder indicar un color principal para mis prendas
+[X] - poder indicar un color principal para mis prendas
 
-[ ] - poder indicar, si existe, un color secundario para mis prendas.
+[X] - poder indicar, si existe, un color secundario para mis prendas.
 
-[X] - evitar que haya prendas sin tipo, tela, categorÌa o color primario
+[X] - evitar que haya prendas sin tipo, tela, categor√≠a o color primario
 
-[X] - evitar que haya prendas cuya categorÌa no se condiga con su tipo.
+[X] - evitar que haya prendas cuya categor√≠a no se condiga con su tipo.
 	(Ej, una remera no puede ser calzado).
