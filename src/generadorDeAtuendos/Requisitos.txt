@@ -1,0 +1,19 @@
+
+Como usuarie de QuéMePongo, quiero:
+
+[X] - especificar qué tipo de prenda estoy cargando
+	(zapatos, camisa de mangas cortas, pantalón, etc).
+
+[X] - identificar a qué categoría pertenece una prenda
+	(parte superior, calzado, parte inferior, accesorios).
+
+[ ] - indicar de qué tela o material está hecha una prenda
+
+[ ] - poder indicar un color principal para mis prendas
+
+[ ] - poder indicar, si existe, un color secundario para mis prendas.
+
+[X] - evitar que haya prendas sin tipo, tela, categoría o color primario
+
+[X] - evitar que haya prendas cuya categoría no se condiga con su tipo.
+	(Ej, una remera no puede ser calzado).
