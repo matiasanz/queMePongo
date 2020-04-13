@@ -22,13 +22,13 @@ class camisaMangasCortas implements TipoPrenda{
 	}
 }
 	
-class pantalon{
+class pantalon implements TipoPrenda{
 	public Categoria categoria(){
 		return Categoria.parteInferior;
 	}
 }
 	
-class anteojos{
+class anteojos implements TipoPrenda{
 	public Categoria categoria(){
 		return Categoria.accesorios;
 	}
