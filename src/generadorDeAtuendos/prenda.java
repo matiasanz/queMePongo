@@ -70,6 +70,7 @@ class Atuendo{
 	List<Prenda> generarCombinacion(){
 		List<Prenda> combinacion = new LinkedList<>();
 		
+		Collections.shuffle(prendasDisponibles);
 		prendasDisponibles.stream().forEach(prenda->{if(prenda.sePuedeAgregarA(combinacion, colores))	
 					combinacion.add(prenda);
 		});
