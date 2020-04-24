@@ -6,36 +6,46 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
+import generadorDeAtuendos.uniforme.Uniforme;
+
 class GeneradorDeAtuendos{
 	List<Prenda> prendasDisponibles = new ArrayList<>();
+	List<Uniforme> uniformesSugeridos = new LinkedList<>();
 	
-	void agregarPrenda(TipoPrenda tipo, String color, String material){
-		this.enlistarPrenda(tipo,color, null, material);
-	}
+	Optional<Prenda>prendaBorrador;
 	
-	void agregarPrenda(TipoPrenda tipo, String colorPrimario, String colorSecundario, String material){
-		this.enlistarPrenda(tipo,colorPrimario, Optional.of(colorSecundario), material);
-	}
-	
-	void enlistarPrenda(TipoPrenda tipo, String color, Optional<String> color2, String material){
-		Prenda nuevaPrenda = new Prenda(tipo, color, material);
+	void agregarPrenda(Prenda nuevaPrenda){
 		
-		if(color2.isPresent()){
-			nuevaPrenda.agregarColor(color2.get());
+		try{
+			nuevaPrenda.validarDatos();
+			prendasDisponibles.add(nuevaPrenda);
+		} catch(RuntimeException t){ //(FaltaTipoException t){
+			System.out.println("Datos insuficientes, se agrego la prenda a borrador");
+			prendaBorrador = Optional.of(nuevaPrenda);
 		}
-		
-		prendasDisponibles.add(nuevaPrenda);
 	}
 	
-	List<Prenda> generarAtuendo(String colorUnico) throws Exception{
+	Prenda getPrendaBorrador(){
+		this.validarPrendaBorrador();
+		Prenda prendaSinCompletar = prendaBorrador.get();
+		prendaBorrador = null;
+		return prendaSinCompletar;
+	}
+	
+	void sugerirUniforme(Uniforme unUniforme){
+		unUniforme.validarDatos();
+		uniformesSugeridos.add(unUniforme);
+	}
+	
+	List<Prenda> generarAtuendo(String colorUnico){
 		return this.nuevoAtuendo(colorUnico, null);
 	}
 	
-	List<Prenda> generarAtuendo(String colorPrimario, String colorSecundario) throws Exception{
+	List<Prenda> generarAtuendo(String colorPrimario, String colorSecundario){
 		return this.nuevoAtuendo(colorPrimario,Optional.of(colorSecundario));
 	}
 		
-	List<Prenda> nuevoAtuendo(String colorPrimario, Optional<String>colorSecundario) throws Exception{
+	List<Prenda> nuevoAtuendo(String colorPrimario, Optional<String>colorSecundario){
 		this.validarPrendas();
 		
 		Atuendo unAtuendo = new Atuendo(prendasDisponibles, colorPrimario);
@@ -47,15 +57,21 @@ class GeneradorDeAtuendos{
 		return unAtuendo.generarCombinacion();
 	}
 	
-	void validarPrendas() throws Exception{
-		if(prendasDisponibles.isEmpty())throw new Exception("No se ingreso ninguna prenda");
+	void validarPrendas(){
+		if(prendasDisponibles.isEmpty())throw new RuntimeException("No se ingreso ninguna prenda");
+												//NoTengoPrendasException();
 	}
-	void validarAtuendo(List<Prenda>atuendo)throws Exception{
-		if(atuendo.isEmpty()) throw new Exception("Ninguna prenda cumple los requisitos");
+	void validarAtuendo(List<Prenda>atuendo){
+		if(atuendo.isEmpty()) throw new RuntimeException("Ninguna prenda cumple los requisitos");
+										//PrendasNoCumplenException();
+	}
+	
+	void validarPrendaBorrador(){
+		if(!prendaBorrador.isPresent()) throw new RuntimeException("No se cargo prenda borrador");
 	}
 }
 
-class Atuendo{
+class Atuendo{ //TODO Pasar a generador de atuendos, no tiene comportamiento diferencial
 	List<Prenda> prendasDisponibles;
 	List<String> colores = new LinkedList<>();
 	

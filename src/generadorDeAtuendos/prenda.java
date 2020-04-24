@@ -1,29 +1,38 @@
 package generadorDeAtuendos;
 
-import java.util.LinkedList;
 import java.util.List;
 
 class Prenda{
 	TipoPrenda tipo;
-	String material;
-	List<String> colores = new LinkedList<>();
+	Tela tela;
 	
-	Prenda(TipoPrenda unTipo, String unColor, String deQueEstaHecha){
+	Prenda(TipoPrenda unTipo, Tela unaTela, String unColor){
 		tipo=unTipo;
-		this.agregarColor(unColor);
-		material = deQueEstaHecha;
+		tela = unaTela;
 	}
 	
-	void agregarColor(String nuevoColor){
-		colores.add(nuevoColor);
+	void validarDatos(){
+		this.validarTipo();
+		tela.validarDatos();
+	}
+	
+	//Getters	
+	List<String>colores(){
+		return tela.colores();
 	}
 	
 	Categoria categoria(){
 		return tipo.categoria();
 	}
 	
+	//validaciones
+	void validarTipo(){	
+		if(tipo == null) throw new RuntimeException("No se ingreso el tipo de la prenda");
+	}								
+	
+	//Para armar atuendo	
 	boolean sePuedeAgregarA(List<Prenda> combinacion, List<String>coloresPermitidos){
-		return !this.categoriaPresenteEn(combinacion) && coloresPermitidos.containsAll(colores);
+		return !this.categoriaPresenteEn(combinacion) && coloresPermitidos.containsAll(this.colores());
 	}
 	
 	boolean categoriaPresenteEn(List<Prenda>combinacion){
