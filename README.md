@@ -7,36 +7,36 @@ Requisitos:
 
 *1era Iteracion*
 . Usuario:
-[X] - indicar de qu√© tela o material est√° hecha una prenda
+[x] - indicar de qu√É¬© tela o material est√É¬° hecha una prenda
 
-[X] - poder indicar un color principal para mis prendas
+[x] - poder indicar un color principal para mis prendas
 
-[X] - poder indicar, si existe, un color secundario para mis prendas.
+[x] - poder indicar, si existe, un color secundario para mis prendas.
 
-[X] - evitar que haya prendas sin tipo, tela, categor√≠a o color primario
+[x] - evitar que haya prendas sin tipo, tela, categor√É¬≠a o color primario
 
-[X] - evitar que haya prendas cuya categor√≠a no se condiga con su tipo.
+[x] - evitar que haya prendas cuya categor√É¬≠a no se condiga con su tipo.
 	(Ej, una remera no puede ser calzado).
 
 _2da Iteracion_
 . Usuario:
-[X] Especificar quÈ trama tiene la tela de una prenda (lisa, rayada, con lunares, a cuadros o un estampado).
+[x] Especificar qu√© trama tiene la tela de una prenda (lisa, rayada, con lunares, a cuadros o un estampado).
 
-[X] crear una prenda especificando primero de quÈ tipo es.
+[x] crear una prenda especificando primero de qu√© tipo es.
 
-[X] crear una prenda especificando en segundo lugar los aspectos relacionados a su material (colores, material, trama, etc) para evitar elegir materiales inconsistentes con el tipo de prenda.
+[x] crear una prenda especificando en segundo lugar los aspectos relacionados a su material (colores, material, trama, etc) para evitar elegir materiales inconsistentes con el tipo de prenda.
 
-[X] guardar un borrador de la la ˙ltima prenda que empecÈ a cargar para continuar despuÈs.
+[x] guardar un borrador de la la √∫ltima prenda que empec√© a cargar para continuar despu√©s.
 
-[X] poder no indicar ninguna trama para una tela, y que por defecto Èsta sea lisa.
+[x] poder no indicar ninguna trama para una tela, y que por defecto √©sta sea lisa.
 
-[X] poder guardar una prenda solamente si esta es v·lida.
+[x] poder guardar una prenda solamente si esta es v√°lida.
 
-Por otro lado, el equipo de producto est· analizando potenciales futuras funcionalidades para la aplicaciÛn y, a fin de tener una estimaciÛn de su complejidad, nos pidiÛ que esbocemos una soluciÛn a los siguientes requerimientos, orientados a integrar el software con colegios e instituciones privadas:
+Por otro lado, el equipo de producto est√° analizando potenciales futuras funcionalidades para la aplicaci√≥n y, a fin de tener una estimaci√≥n de su complejidad, nos pidi√≥ que esbocemos una soluci√≥n a los siguientes requerimientos, orientados a integrar el software con colegios e instituciones privadas:
 
-[X] poder recibir sugerencias de uniformes armados.
+[x] poder recibir sugerencias de uniformes armados.
 
-[X] un uniforme siempre conste de una prenda superior, una inferior y un calzado
+[x] un uniforme siempre conste de una prenda superior, una inferior y un calzado
 
 Administrador:
-[X] poder configurar diferentes uniformes para distintas instituciones (Ej: para el colegio San Juan debe ser una chomba verde de piquÈ, un pantalÛn de acetato gris y zapatillas blancas, mientras que para el Instituto Johnson siempre ser· una camisa blanca, pantalÛn de vestir negro y zapatos negros) 
+[x] poder configurar diferentes uniformes para distintas instituciones (Ej: para el colegio San Juan debe ser una chomba verde de piqu√©, un pantal√≥n de acetato gris y zapatillas blancas, mientras que para el Instituto Johnson siempre ser√° una camisa blanca, pantal√≥n de vestir negro y zapatos negros) 
